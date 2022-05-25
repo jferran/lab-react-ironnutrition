@@ -1,14 +1,18 @@
 import React from 'react'
 
-function FoodTotal({totalFood}) {
+function FoodTotal({totalFood, updateFoodQuantity}) {
+    const handleClick = (food) => {
+        food.quantity=0
+        updateFoodQuantity(food)
+    }
   return (
     <div>
         <h2>Today's foods</h2>
         {totalFood.map(element => 
-            
-                <p key={element.name + element.calories}>{element.quantity} {element.name} = {element.calories * element.quantity} </p>
-            
-            
+            <div key={element.name + element.calories}>    
+                <p>{element.quantity} {element.name} = {element.calories * element.quantity} </p>
+                <button className="button is-info" onClick={() => handleClick(element)}>🗑</button>
+            </div>    
         )}
         <h3>Total: {totalFood.reduce((acc, element)=>{
             return acc+(element.calories * element.quantity)

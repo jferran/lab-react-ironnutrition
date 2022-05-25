@@ -1,15 +1,14 @@
 import React from 'react'
 
-function FoodBox({food, addFoodUnit}) {
+function FoodBox({food, updateFoodQuantity}) {
     const {name, calories, image} = food
     const [quantity, quantitySet] = React.useState(food.quantity)
     const handleIncrease = (event) => {
         parseInt(event.target.value)>=0 && quantitySet(event.target.value)
     }
     const handleClick = (operator) =>{
-        console.log("operator", operator)
-        if(operator === '-' && food.quantity>=quantity)addFoodUnit({name, quantity})
-        else if (operator === '+') addFoodUnit({name, quantity})
+        if(operator === '-' && food.quantity>=quantity)updateFoodQuantity({name, quantity})
+        else if (operator === '+') updateFoodQuantity({name, quantity})
         
     }
   return (

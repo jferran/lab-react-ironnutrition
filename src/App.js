@@ -17,13 +17,12 @@ function App() {
     setFoodList([...foodList, item]);
   };
   const handleShowForm = () => {
-    //showForm ? setShowForm(false) : setShowForm(true)
     setShowForm(!showForm);
   };
   const searchFunction = (searchValue) => {
     setSearchValue(searchValue);
   };
-  const addFoodUnit = (food) => {
+  const updateFoodQuantity = (food) => {
     setFoodList(
       foodList.map((element) => {
         if (element.name === food.name) element.quantity = food.quantity;
@@ -34,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hi</h1>
+      <h1>IronNutrition</h1>
       <button onClick={handleShowForm}>Show form</button>
       {showForm && <AddForm addElement={addElement} />}
       <h2>Search</h2>
@@ -46,14 +45,14 @@ function App() {
         <FoodBox
               key={index + element.name}
               food={element}
-              addFoodUnit={addFoodUnit}
+              updateFoodQuantity={updateFoodQuantity}
             />
             ))
-      
       }
 
       <FoodTotal
         totalFood={foodList.filter((element) => element.quantity > 0)}
+        updateFoodQuantity={updateFoodQuantity}
       />
     </div>
   );

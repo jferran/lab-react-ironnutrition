@@ -10,10 +10,7 @@ function Search({searchFunction}) {
 
   return (
     <div>
-        <form>
-            <label htmlFor='search'>Search</label>
-            <input type="text" name="search" onChange={handleSearch} value={search}/>
-        </form>
+        <input type="text" name="search" placeholder="Search" onChange={handleSearch} value={search}/>
     </div>
   )
 }
