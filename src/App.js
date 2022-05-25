@@ -5,6 +5,7 @@ import foods from './foods.json';
 import FoodBox from './components/FoodBox';
 import AddForm from './components/AddForm';
 import Search from './components/Search';
+import FoodTotal from './components/FoodTotal';
 
 function App() {
   const [foodList, setFoodList] = React.useState(foods)
@@ -22,6 +23,17 @@ function App() {
   const searchFunction = (searchValue) => {
     setSearchValue(searchValue)
   }
+  const addFoodUnit = (food) =>{
+    setFoodList(
+      foodList.map(
+        (element)=>{
+          if(element.name === food.name)element.quantity = food.quantity
+          return element
+        }
+      )
+    )
+
+  }
 
   return (
     <div className="App">
@@ -32,14 +44,17 @@ function App() {
       <Search searchFunction={searchFunction}/>
 
       {foodList.map( (element, index) => {
-
         if (element.name.toUpperCase().includes(searchValue.toUpperCase())){
           return (
-        <FoodBox key={index + element.name} food={element}/>)
+        <FoodBox key={index + element.name} food={element} addFoodUnit={addFoodUnit}/>)
         } else return null
-        
       }
         )}
+
+      <FoodTotal totalFood={
+        foodList
+        .filter( element => element.quantity>0)
+        }/>
       
     </div>
   );
