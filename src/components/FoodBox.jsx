@@ -6,8 +6,11 @@ function FoodBox({food, addFoodUnit}) {
     const handleIncrease = (event) => {
         parseInt(event.target.value)>=0 && quantitySet(event.target.value)
     }
-    const handleClick = () =>{
-        addFoodUnit({name, quantity})
+    const handleClick = (operator) =>{
+        console.log("operator", operator)
+        if(operator === '-' && food.quantity>=quantity)addFoodUnit({name, quantity})
+        else if (operator === '+') addFoodUnit({name, quantity})
+        
     }
   return (
     <div className="box">
@@ -31,7 +34,8 @@ function FoodBox({food, addFoodUnit}) {
               <input className="input" type="number" onChange={handleIncrease} value={quantity} />
             </div>
             <div className="control">
-              <button className="button is-info" onClick={handleClick}>+</button>
+              <button className="button is-info" onClick={() => handleClick('+')}>+</button>
+              <button className="button is-info" onClick={() => handleClick('-')}>-</button>
             </div>
           </div>
         </div>

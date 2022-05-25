@@ -7,7 +7,7 @@ function FoodTotal({totalFood}) {
         <h2>Today's foods</h2>
         {totalFood.map(element => {
             return (
-                <p>{element.quantity} {element.name} = {element.calories * element.quantity} </p>
+                <p key={element.name + element.calories}>{element.quantity} {element.name} = {element.calories * element.quantity} </p>
             )
             
         })}
