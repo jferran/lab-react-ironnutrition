@@ -6,7 +6,6 @@ function Search({searchFunction}) {
     const handleSearch = (event) => {
         setSearch(event.target.value)
         searchFunction(event.target.value)
-
     }
 
   return (
