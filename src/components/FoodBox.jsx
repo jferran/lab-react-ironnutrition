@@ -1,6 +1,7 @@
 import React from 'react'
 
-function FoodBox({name, calories, image, quantity}) {
+function FoodBox({food}) {
+    const {name, calories, image, quantity} = food
   return (
     <div className="box">
       <article className="media">

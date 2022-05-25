@@ -35,12 +35,7 @@ function App() {
 
         if (element.name.toUpperCase().includes(searchValue.toUpperCase())){
           return (
-        <FoodBox key={index + element.name} 
-        name={element.name} 
-        calories={element.calories}
-        image={element.image}
-        quantity={element.quantity}
-        />)
+        <FoodBox key={index + element.name} food={element}/>)
         } else return null
         
       }
