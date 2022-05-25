@@ -8,7 +8,14 @@ function App() {
   return (
     <div className="App">
       <h1>Hi</h1>
-      <FoodBox/>
+      {foods.map( element => 
+      <FoodBox 
+        name={element.name} 
+        calories={element.calories}
+        image={element.image}
+        quantity={element.quantity}
+        />)}
+      
     </div>
   );
 }
