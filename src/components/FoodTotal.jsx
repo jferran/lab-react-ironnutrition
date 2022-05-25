@@ -6,7 +6,7 @@ function FoodTotal({totalFood, updateFoodQuantity}) {
         updateFoodQuantity(food)
     }
   return (
-    <div>
+    <div className='foodTotal'>
         <h2>Today's foods</h2>
         {totalFood.map(element => 
             <div key={element.name + element.calories}>    

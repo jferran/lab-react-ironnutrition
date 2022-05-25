@@ -34,7 +34,7 @@ function FoodBox({food, updateFoodQuantity}) {
             </div>
             <div className="control">
               <button className="button is-info" onClick={() => handleClick('+')}>+</button>
-              <button className="button is-info" onClick={() => handleClick('-')}>-</button>
+              {/* <button className="button is-info" onClick={() => handleClick('-')}>-</button> */}
             </div>
           </div>
         </div>

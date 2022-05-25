@@ -9,7 +9,7 @@ function Search({searchFunction}) {
     }
 
   return (
-    <div>
+    <div className='search'>
         <input type="text" name="search" placeholder="Search" onChange={handleSearch} value={search}/>
     </div>
   )

@@ -39,21 +39,24 @@ function App() {
       <h2>Search</h2>
       <Search searchFunction={searchFunction} />
 
-      {foodList
-      .filter((element) => element.name.toUpperCase().includes(searchValue.toUpperCase()))
-      .map((element, index) => (
-        <FoodBox
-              key={index + element.name}
-              food={element}
-              updateFoodQuantity={updateFoodQuantity}
-            />
-            ))
-      }
-
+    <div className='content'>
+      <div className='foodList'>
+        {foodList
+        .filter((element) => element.name.toUpperCase().includes(searchValue.toUpperCase()))
+        .map((element, index) => (
+          <FoodBox
+                key={index + element.name}
+                food={element}
+                updateFoodQuantity={updateFoodQuantity}
+              />
+              ))
+        }
+      </div>
       <FoodTotal
         totalFood={foodList.filter((element) => element.quantity > 0)}
         updateFoodQuantity={updateFoodQuantity}
       />
+      </div>
     </div>
   );
 }

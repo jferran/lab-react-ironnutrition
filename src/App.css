@@ -36,3 +36,62 @@
     transform: rotate(360deg);
   }
 }
+
+
+.box{
+  border: solid;
+  height: 70px;
+  width: 400px;
+  
+}
+.media{
+  /* display: flex;
+  justify-content: space-around; */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.media-left{
+  width: 100px;
+  
+}
+.media-content{
+  width: 200px;
+}
+.media-content .content{
+  justify-content: left;
+}
+.media-right{
+  width: 150px;
+}
+.media-right .control{
+  float: left;
+}
+.media-right input{
+  width: 70px;
+}
+.media-right .button{
+  width:70px;
+  height: 70px;
+}
+.field.has-addons{
+  display: flex;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  justify-content: right;
+}
+.field input{
+  text-align: center;
+}
+.search input{
+  width: 650px;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+}
