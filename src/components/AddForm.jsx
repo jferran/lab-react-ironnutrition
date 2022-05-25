@@ -1,9 +1,10 @@
 import React from 'react'
+const {useState} = React
 
 function AddForm({addElement}) {
-    const [name, setName] = React.useState("")
-    const [calories, setCalories] = React.useState(0)
-    const [image, setImage] = React.useState("")
+    const [name, setName] = useState("")
+    const [calories, setCalories] = useState(0)
+    const [image, setImage] = useState("")
 
     const handleNameChange = (event) => {
         setName(event.target.value)
@@ -33,7 +34,6 @@ function AddForm({addElement}) {
 
         <label htmlFor="image">Image:</label>
         <input type="text" name="image" onChange={handleImageChange} value={image}/>
-
 
         <button>Add</button>
     </form>
